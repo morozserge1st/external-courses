@@ -1,0 +1,56 @@
+body {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+div {
+  padding: 30px;
+  margin: 20px;
+}
+
+.border1 {
+  outline: 10px solid rgba(230, 67, 3, 0.945);
+}
+
+.border2 {
+  border: 10px dashed #d10000;
+  border-radius: 10px;
+}
+
+.border3 {
+  border-radius: 100px 0;
+  box-shadow: inset 0 0 5px 1px #16fd01, 0 0 5px 5px #16fd01, 0 0 5px 10px #e0f051, 0 0 5px 12px #ff8800, 0 0 5px 13px #ff0000;
+}
+
+.border4 {
+  background-image: url(https://img.icons8.com/small/10/000000/js.png);
+  position: relative;
+}
+
+.border4::before {
+  white-space: nowrap;
+  padding: 20px;
+  position: absolute;
+  background-color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  content: "Border  4";
+}
+
+.border5 {
+  border: 10px solid;
+  border-radius: 70px;
+  border-top-left-radius: 10em 1em;
+  border-bottom-right-radius: 10em 1em;
+  animation: change-border 2s linear infinite;
+}
+
+@keyframes change-border {   
+  0%, 100% {     
+    border-color: rgb(231, 4, 4);   
+  }   
+  50% {
+    border-color: rgb(94, 255, 0);
+   }
+}

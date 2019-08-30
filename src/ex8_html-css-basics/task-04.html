@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Task-02</title>
+  <link rel="stylesheet" href="./task-04.css">
+  <style>
+    .list {
+      background-color: #008100;
+    }
+
+    .circle {
+      list-style-type: circle;
+    }
+
+    .square {
+      list-style-type: square;
+    }
+
+    .cat {
+      width: 360px;
+      height: 250px;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="head">HTML Basics</h1>
+  <div class="lists">
+    <h2 class="block__header">Lists</h2>
+    <div class="lists__row center">
+      <div class="lists__cell">
+        <h3>Ordered list</h3>
+        <ol>
+          <li>first item</li>
+          <li>second item</li>
+          <li>third item</li>
+          <li>fourth item</li>
+          <li>fifth item</li>
+        </ol>
+      </div>
+      <div class="lists__cell">
+        <h3>Unordered list</h3>
+        <ul>
+          <li>A</li>
+          <li>D</li>
+          <li>C</li>
+          <li>D</li>
+          <li>E</li>
+        </ul>    
+      </div>
+    </div>
+    <div class="lists__row center">
+      <div class="lists__cell">
+        <h3>Description List</h3>
+        <dl>
+          <dt>Name</dt>
+          <dd>Godzilla</dd>
+          <dt>Born</dt>
+          <dd>1952</dd>
+          <dt>Birthplace</dt>
+          <dd>Japan</dd>
+          <dt>Color</dt>
+          <dd>Green</dd>
+        </dl>
+      </div>
+      <div class="lists__cell">
+        <h3>Nested list</h3>
+        <ul>
+          <li>List item one</li>
+          <li>List item two with subitems:
+            <ul class="circle">
+              <li>Subitem 1
+                <ul class="square">
+                  <li>SubSubitem 1</li>
+                  <li>SubSubitem 2</li>
+                </ul>
+              </li>
+              <li>Subitem 2</li>
+            </ul>
+          </li>
+          <li>Final list item</li>
+        </ul>  
+      </div>
+      <div class="lists__cell">
+        <h3>List with links</h3>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">News</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <hr>
+
+  <h2 class="block__header">Paragraphs</h2>
+  <div class="par__content">
+    <p>Mauris sollicitudin massa quis nibh finibus vulputate. Praesent tempus lobortis sem in viverra. Integer ornare lorem eu diam scelerisque, tristique auctor dui tristique. Fusce sit amet ex ut ante gravida venenatis. Fusce sit amet urna et mauris malesuada pellentesque vitae interdum tellus. In risus neque, elementum eget est at, mollis congue nibh. Phasellus vitae tincidunt nunc. Maecenas bibendum erat nec tortor tempor sagittis.</p>
+  </div>
+  <div class="par__text">
+    <p>Mauris dapibus metus non ligula pulvinar, a vestibulum tortor auctor. <br>
+      Mauris aliquam tristique augue eu dapibus. <br>
+      Suspendisse ornare diam at justo faucibus sollicitudin. <br>
+      Integer id lobortis nulla. Sed dictum ipsum sed tincidunt volutpat. <br>
+      Vivamus nec quam odio. Nunc semper faucibus urna eget tristique. <br>
+      Aliquam lacinia aliquet purus, vitae sagittis nisl lacinia in. <br>
+      Nam elementum est ac finibus egestas. <br>
+      Pellentesque et justo convallis, volutpat leo a, aliquam massa. <br>
+      Praesent vel dolor quam. Phasellus fermentum velit id aliquam malesuada.</p>
+  </div>
+  
+  <hr>
+
+  <h2 class="block__header">Tables</h2>
+  <div class="table center">
+    <table> 
+        <tr>
+          <th>First name</th>
+          <th>Last name</th>
+        </tr>
+        <tr>
+          <td>John</td>
+          <td>Doe</td>
+        </tr>
+        <tr>
+          <td>John</td>
+          <td>Doe</td>
+        </tr>
+      </table>
+  </div>
+
+
+  <hr>
+
+  <h2 class="block__header">Image</h2>
+  <div class="center">
+    <img src="http://fullhdwallpapers.ru/image/cats/24262/sonnyy-kotenok.jpg" alt="Slipping cat" class="cat">
+    <img src="https://catmolly.com/wp-content/uploads/2019/05/kak-opredelit-pol-kotenka.jpg" alt="Kitty" class="cat">
+    <img src="https://aroundpet.ru/wp-content/uploads/ekzoticheskie-korotkosherstnye-kotyata-1170x767.jpg" alt="cat" class="cat">    
+  </div>
+
+  <hr>
+
+  <h2 class="block__header">Pre tag</h2>
+  <pre class="center">
+
+    if (time === 20) {
+      greeting = "Good day";
+    } else {
+      greeting = "Good evening";
+    }
+
+  </pre>
+</body>
+</html>
