@@ -1,0 +1,153 @@
+body {
+  display: flex;
+}
+.animation1 {
+  margin: 40px;
+  border: 5px solid lightgreen;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  animation-name: loader;
+  animation-duration: 2s;
+  animation-direction: reverse;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.animation1::after, 
+.animation1::before {
+  content: '';
+  position: relative;
+  border: 12px solid transparent;
+ }
+
+.animation1::after {
+  top: 60px;
+  left: -38px;
+  border-top: 20px solid lightgreen;
+ }
+
+.animation1::before {
+  top: 20px;
+  left: 90px;
+  border-bottom: 20px solid lightgreen;
+ }
+
+.animation2 {
+  position: relative;
+  background-color: blue;
+  width: 150px;
+  height: 40px;
+  margin: 20px;
+  margin-top: 100px;  
+}
+
+.animation2::after, 
+.animation2::before {
+  content: '';
+  position: absolute;
+}
+
+.animation2::after {
+  border: 25px solid orange;
+  border-radius: 50%;
+  left: 50px;
+  top: 40px;
+  animation-name: ball;
+  animation-duration: 1s;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.animation2::before {
+  border: 35px solid white;
+  left: 40px;
+}
+
+.animation3 {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 40px;
+  animation-name: changes;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes loader {
+  0% {
+    transform: rotate(0)
+  }
+  100% {
+    transform: rotate(360deg)
+  }
+}
+
+@keyframes ball {
+  0% {
+    transform: translateY(0)
+  }
+
+  30% {
+    transform: translateY(-15px)
+  }
+  70% {
+    transform: translateY(-55px)
+  }
+  100% {
+    transform: translateY(-100px)
+  }
+}
+
+@keyframes changes {
+  0%, 17% {
+    opacity: 1;
+    border-radius: 50%;
+  }
+  20% {
+    border-radius: 0;
+    opacity: 1;
+  }
+  23% {
+    opacity: 0;
+    background: linear-gradient(lightgreen, yellow);
+  }
+  26% {
+    opacity: 1;
+    background: linear-gradient(90deg,aqua, orange);
+  }
+  37% {
+    transform: skew(0deg,0deg);
+  }
+  39% {
+    opacity: 1;
+    transform: skew(30deg,0deg);
+  }
+  50% {
+    transform: skew(30deg,0deg) rotate(0);
+  }
+  65% {
+    transform: skew(0deg,0deg) rotate(180deg);
+  }
+  80% {
+    transform: rotate(360deg);
+    opacity: 1;
+  }
+  83% {
+    opacity: 0;
+    background: linear-gradient(90deg,aqua, orange);
+  }
+  85% {
+    opacity: 1;
+    background: linear-gradient(lightgreen, yellow);
+  }
+  95%{
+    border-radius: 0;
+  } 
+  100% {
+    border-radius: 50%;
+    background: linear-gradient(lightgreen, yellow);
+  }
+}
