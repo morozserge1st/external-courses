@@ -60,19 +60,26 @@ footer {
   padding: 20px 0;
 }
 
+.sidebar__section:last-child {
+  border-bottom: none;
+}
+
 .sidebar__nav {
   list-style-type: none;
 }
 
 .sidebar__nav-item,
-.sidebar__categories-item {
+.sidebar__categories-item,
+.sidebar__history-list-item {
   padding: 10px;
   padding-left: 20px;
 }
-.sidebar__nav-item:hover {
+.sidebar__nav-item:hover,
+.sidebar__categories-item:hover {
   background: #15A4FA;
 }
-.sidebar__nav-item:hover a{
+.sidebar__nav-item:hover a,
+.sidebar__categories-item:hover a {
   color: #FFFFFF;
 }
 
@@ -96,6 +103,31 @@ footer {
 
 .sidebar__categories-item a i {
   font-size: 7px;
+}
+
+.sidebar__history-list-item i {
+  padding-top: 2px;
+  font-size: 15px;
+}
+
+.sidebar__history-list-item {
+  color: #6F7D95;
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.sidebar__history-list-item div {
+  padding-left: 5px;
+}
+
+.sidebar__history-list-item div span {
+  font-weight: bold;
+}
+
+.sidebar__history-time {
+  padding-top: 10px;
+  font-size: 12px;
+  font-family: ProximaNova-Light,AdobeInvisFont,MyriadPro-Regular;
 }
 
 .circle-1 {
