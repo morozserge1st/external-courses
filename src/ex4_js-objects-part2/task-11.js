@@ -1,6 +1,6 @@
 function countLetter(str) {
   const result = {};
-  str = str.toLowerCase().split('').map((item) => {
+  str.toLowerCase().split('').map((item) => {
     if (result[item]) {
       result[item] += 1;
     } else if (item !== ' ') {
