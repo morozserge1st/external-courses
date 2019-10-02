@@ -3,7 +3,7 @@ function deepClone(obj) {
   if (obj === null || typeof obj !== "object") return obj;
   if (obj instanceof Array) {
     clone = [];
-    for (let i = 0, len = obj.length; i < len; i++) {
+    for (let i = 0; i < obj.length; i++) {
       clone[i] = deepClone(obj[i]);
     }
     return clone;
