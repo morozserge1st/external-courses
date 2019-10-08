@@ -1,11 +1,10 @@
 function isObjKey(str, obj) {
-  let result = false;
   for (const key in obj) {
     if (key === str) {
-      result = true;
+      return true;
     }
   }
-  return result;
+  return false;
 }
 
 module.exports = isObjKey;
