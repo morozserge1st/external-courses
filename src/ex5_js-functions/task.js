@@ -1,36 +1,51 @@
-var Calculator = {
-  result: 0,
-  add: function add(num) {
-    if (Number.isFinite(num)){
-      Calculator.result += num;
+function Calculator() {
+  let result = 0;
+
+  function add(num) {
+    if (+num) {
+      result += num;
     }
     return add;
-  },
-  subtract: function subtract(num) {
-    if (Number.isFinite(num)){
-      Calculator.result -= num;
+  }
+
+  function subtract(num) {
+    if (+num) {
+      result -= num;
     }
     return subtract;
-  },
-  divide: function divide(num) {
-    if (Number.isFinite(num)){
-      Calculator.result /= num;
+  }
+
+  function divide(num) {
+    if (+num) {
+      result /= num;
     }
     return divide;
-  },
-  multiply: function multiply(num) {
-    if (Number.isFinite(num)){
-      Calculator.result *= num;
+  }
+
+  function multiply(num) {
+    if (+num) {
+      result *= num;
     }
     return multiply;
-  },
-  getResult: function getResult() {
-    return this.result;
-  },
-  reset: function reset() {
-    this.result = 0;
+  }
+
+  function getResult() {
+    return result;
+  }
+
+  function reset() {
+    result = 0;
     return reset;
-  },
+  }
+
+  return {
+    add,
+    subtract,
+    divide,
+    multiply,
+    getResult,
+    reset
+  }
 }
 
-module.exports = Calculator;
+module.exports = Calculator();
