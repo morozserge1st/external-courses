@@ -1,4 +1,4 @@
-function Calculator() {
+const Calculator = (function Calculator() {
   let result = 0;
 
   function add(num) {
@@ -46,6 +46,6 @@ function Calculator() {
     getResult,
     reset
   }
-}
+}());
 
-module.exports = Calculator();
+module.exports = Calculator;
