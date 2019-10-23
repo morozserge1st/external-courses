@@ -5,65 +5,102 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Task-02</title>
-  <link rel="stylesheet" href="./task-02-1.css">
-  <link rel="stylesheet" href="./task-02-2.css">
 </head>
 <body>
-  <table class="table">
-		<tr>
-			<th class="table__head">customer</th>
-			<th class="table__head">phone</th>
-			<th class="table__head">mail</th>
-			<th class="table__head">outstanding</th>
-		</tr>
-		<tr class="table__row">
-			<td class="table__cell">jonny aviony</td>
-			<td class="table__cell">(740) 841-7566</td>
-			<td class="table__cell">into@johnyaviony.com</td>
-			<td class="table__cell">&#36; 2.400.00</td>
-		</tr>
-		<tr class="table__row">
-			<td class="table__cell">mark hammok</td>
-			<td class="table__cell">(800) 950-4511</td>
-			<td class="table__cell">markhammocklgmail.com</td>
-			<td class="table__cell">&#36; 700</td>
-		</tr>
-		<tr class="table__row">
-			<td class="table__cell">richlcl cross</td>
-			<td class="table__cell">(322) 841-7566</td>
-			<td class="table__cell">crossstation@gmail.com</td>
-			<td class="table__cell">&#36; 1.755.00</td>
-		</tr>
-		<tr class="table__row">
-			<td class="table__cell">flinn's shack</td>
-			<td class="table__cell">(740) 841-7566</td>
-			<td class="table__cell">help@flinns.com</td>
-			<td class="table__cell">&#36; 26.850.00</td>
-		</tr>
-		<tr class="table__row">
-			<td class="table__cell">flip justic</td>
-			<td class="table__cell">(322) 841-7566</td>
-			<td class="table__cell">flip.justick@gmail.com</td>
-			<td class="table__cell">&#36; 642.214.00</td>
-		</tr>
-		<tr class="table__row">
-			<td class="table__cell">summer evans</td>
-			<td class="table__cell">(800) 950-4511</td>
-			<td class="table__cell">summer@gmail.com</td>
-			<td class="table__cell">&#36; 700.00</td>
-		</tr>
-		<tr class="table__row">
-			<td class="table__cell">marco s. diaz</td>
-			<td class="table__cell">(800) 800-1111</td>
-			<td class="table__cell">s.diaz@gmail.com</td>
-			<td class="table__cell">&#36; 65.00</td>
-		</tr>
-		<tr class="table__row">
-			<td class="table__cell">ricky stwerat</td>
-			<td class="table__cell">(800) 800-2222</td>
-			<td class="table__cell">r.stwerat@gmail.com</td>
-			<td class="table__cell">&#36; 930.00</td>
-		</tr>
-	</table>  
+  <form action="http://httpbin.org/get" method="get">
+    <fieldset>
+      <legend>Personal data</legend>
+      <label> 
+        Surname
+          <input type="text">
+      </label>
+      <br>
+      <label> 
+        First name
+          <input type="text">
+      </label>
+      <br>
+      <label> 
+        Middle name
+          <input type="text">
+      </label>
+      <br>
+      <span>You are</span>
+      <input type="radio" name="sex" id="male">
+      <label for="male">male</label>
+      <input type="radio" name="sex" id="female">
+      <label for="female">female</label>
+      <br>
+      <label>
+        Age
+          <input type="number" min="18" max="101">
+      </label>
+      <br>
+      <label>
+        Country of Residence
+          <select>
+            <option value="empty" disabled selected>Select Country</option>
+            <option value="russia">Russia</option>
+            <option value="usa">USA</option>
+          </select>
+      </label>
+      <br>
+      <span>City</span>
+      <input type="checkbox" name="city" id="ryazan">
+      <label for="ryazan">Ryazan</label>
+      <input type="checkbox" name="city" id="moscow">
+      <label for="moscow">Moscow</label>
+      <br>
+      <label for="photo">Photography</label>
+      <input type="file" name="photo" id="photo">
+      <hr>
+      <label>
+        Title
+					<select multiple>
+						<optgroup label="Technologies">
+							<option>Web Master</option>
+							<option>Database Administrator</option>
+							<option>Computer-Aided design</option>
+						</optgroup>
+						<optgroup label="Finance">
+							<option>Economic Planning</option>
+							<option>Management accounting</option>
+							<option>Budgeting and planning</option>
+						</optgroup>
+          </select>
+      </label>
+      <br>
+      <label>
+        Salary
+          <input type="range">
+      </label>
+      <br>
+      <textarea placeholder="Tell us about yourself..." cols="30" rows="10"></textarea>
+    </fieldset>
+    <fieldset>
+      <legend>Contact Information</legend>
+      <label>
+        Site
+          <input type="url">
+      </label>
+      <br>
+      <label>
+        Email
+          <input type="email">
+      </label>
+      <br>
+      <label>
+        Phone
+          <input type="tel">
+      </label>
+    </fieldset>
+    <label>
+      Password
+        <input type="password">
+    </label>
+    <br>
+    <input type="submit">
+    <input type="reset">
+  </form>
 </body>
 </html>
