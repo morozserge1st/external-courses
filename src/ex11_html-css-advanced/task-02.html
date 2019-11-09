@@ -8,18 +8,41 @@
   <link rel="stylesheet" href="./task-02.css">
 </head>
 <body>
-  <form action="#" method="get">
-    <div class="field row">
-      <input type="text" name="title" id="title" placeholder="Title" required>
-      <label for="title">Title</label>    
+  <form action="#" method="get" class="form">
+    <div class="form__row">
+      <input
+        type="text"
+        name="title"
+        class="form__input"
+        id="title"
+        placeholder="Title"
+        required
+      >
+      <label for="title" class="form__label">Title</label>    
     </div>
-    <div class="field col1">
-      <input type="text" name="price" id="price" placeholder="Price" required>
-      <label for="price">Price</label>  
-    </div>
-    <div class="field col2" >
-      <input type="text" name="location" id="location" placeholder="Location" required>
-      <label for="location">Location</label>  
+    <div class="form__row">
+      <div class="form__col">
+        <input
+          type="text"
+          name="price"   
+          class="form__input"
+          id="price"
+          placeholder="Price"
+          required
+        >
+        <label for="price" class="form__label">Price</label>  
+      </div>
+      <div class="form__col">
+        <input
+          type="text"
+          name="location"
+          class="form__input"
+          id="location"
+          placeholder="Location"
+          required
+        >
+        <label for="location" class="form__label">Location</label>  
+      </div>
     </div>
   </form>
 </body>

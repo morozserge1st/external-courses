@@ -2,7 +2,7 @@ body {
   display: flex;
 }
 
-.animation1 {
+.loader {
   margin: 40px;
   border: 5px solid lightgreen;
   border-radius: 50%;
@@ -15,26 +15,26 @@ body {
   animation-iteration-count: infinite;
 }
 
-.animation1::after, 
-.animation1::before {
+.loader::after, 
+.loader::before {
   content: '';
   position: relative;
   border: 12px solid transparent;
  }
 
-.animation1::after {
+.loader::after {
   top: 60px;
   left: -38px;
   border-top: 20px solid lightgreen;
  }
 
-.animation1::before {
+.loader::before {
   top: 20px;
   left: 90px;
   border-bottom: 20px solid lightgreen;
  }
 
-.animation2 {
+.ball {
   position: relative;
   background-color: blue;
   width: 150px;
@@ -43,13 +43,13 @@ body {
   margin-top: 100px;  
 }
 
-.animation2::after, 
-.animation2::before {
+.ball::after, 
+.ball::before {
   content: '';
   position: absolute;
 }
 
-.animation2::after {
+.ball::after {
   border: 25px solid orange;
   border-radius: 50%;
   left: 50px;
@@ -61,17 +61,17 @@ body {
   animation-iteration-count: infinite;
 }
 
-.animation2::before {
+.ball::before {
   border: 35px solid white;
   left: 40px;
 }
 
-.animation3 {
+.wrap {
   position: relative;
   width: 150px;
   height: 150px;
   margin: 40px;
-  animation-name: changes;
+  animation-name: transformations;
   animation-duration: 10s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
@@ -102,7 +102,7 @@ body {
   }
 }
 
-@keyframes changes {
+@keyframes transformations {
   0%, 17% {
     opacity: 1;
     border-radius: 50%;
