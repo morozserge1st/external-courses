@@ -12,7 +12,7 @@ body {
   justify-content: space-between;
 }
 
-.wrapper{
+.wrapper {
   max-width: 1150px;
   margin: 0 auto;
   font-family: 'Open Sans', sans-serif;
@@ -24,13 +24,13 @@ body {
   align-items: flex-end;
 }
 
-.fa-bars {
+.menu-mobile {
   display: none;
   color: #3687C4;
   font-size: 41px;
 }
 
-.header__logo {
+.logo {
   width: 403px;
   height: 93px;
   background-image: url(./img/logo.png);
@@ -41,40 +41,39 @@ body {
   font-size: 41px;
 }
 
-.header__logo-link {
+.logo__link {
   position: relative;
   top: 18px;
   text-decoration: none;
-  color: #3687c4;;
+  color: #3687c4;
 }
 
-.header__logo-link:visited {
+.logo__link:visited {
   color: #1faae2;
-  ;
 }
 
-.header__contacts {
+.popup {
   display: flex;
   position: relative;
   font-size: 36px;
   color: #6D6E71;
 }
 
-.header__contacts-item {
+.popup__item {
   position: relative;
   padding: 0 10px;
   border-right: 1px solid #6D6E71;
 }
 
-.header__contacts-item:last-child {
+.popup__item:last-child {
   border-right: none;
 }
 
-.header__contacts i {
+.popup__icon {
   padding: 10px;
 }
 
-.header__contact-text {
+.popup__text {
   text-decoration: none;
   font-style: normal;
   position: absolute;
@@ -89,8 +88,8 @@ body {
   border-radius: 5px;
 }
 
-.header__contact-text::before,
-.header__contact-text::after {
+.popup__text::before,
+.popup__text::after {
   content: ''; 
   position: absolute;
   top: 47px;
@@ -100,7 +99,7 @@ body {
   border-top: 14px solid #d4d4d5;
 }
 
-.header__contact-text::after {
+.popup__text::after {
   top: 45px;
   border-top-color: #ffffff;
 }
@@ -110,7 +109,7 @@ body {
   border-top: 1px solid #ECEEF4;
 }
 
-.menu__nav {
+.menu__list {
   display: flex;
   list-style-type: none;
   font-size: 13px;
@@ -118,35 +117,35 @@ body {
   padding: 0;
 }
 
-.menu__nav-link {
+.menu__link {
   text-decoration: none;
   font-weight: bold;
   color: #6d6e71;
 }
 
-.menu__nav-item {
+.menu__item {
   position: relative;
   border-right: 1px solid #ECEEF4;
   padding: 35px 25px;
 }
 
-.menu__nav-item:last-child {
+.menu__item:last-child {
   border-right: none;
 }
 
-.menu__nav-item:hover .menu__nav-link,
-.header__contacts-item:hover {
+.menu__item:hover .menu__link,
+.popup__item:hover {
   color: #1faae2;
 }
 
-.header__contacts-item:hover .header__contact-text {
+.popup__item:hover .popup__text {
   display: inline;
   top: -70px;
   left: 50%;
   transform: translateX(-50%);
 }
 
-.menu__nav-item:hover .menu__nav-link::after {
+.menu__item:hover .menu__link::after {
   content: ''; 
   position: absolute;
   top: 63px;
@@ -156,19 +155,19 @@ body {
   border-bottom: 8px solid #1faae2;
 }
 
-.menu__nav-link:visited {
+.menu__link:visited {
   color: inherit;
 }
 
-.fa-search {
+.search__icon {
   font-size: 26px;
   padding-right: 10px;
 }
 
-.menu__search-field {
+.search__input {
   font-size: 15px;
   border: none;
-  outline: none;
+  padding: 5px;
 }
 
 .main {
@@ -180,93 +179,101 @@ body {
   position: relative;
 }
 
-.main__header {
-  position: relative;
+.main-inner {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
 }
 
-.main__header-text1 {
-  position: absolute;
-  top: 250px;
-  left: 200px;
+.slogan {
+  height: 100%;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.slogan__title {
   font-size: 55px;
   color: #FFFFFF;
   font-weight: bold;
   letter-spacing: 2px;
   text-shadow: 0 0 2px black;
-  z-index: 10;
+  z-index: 1;
 }
 
-.main__header-text2 {
-  position: absolute;
-  top: 245px;
-  left: 210px;
-  font-size: 110px;
-  color: #BBEDFF;
-  font-weight: bold;
-}
-
-.main__header-text3 {
-  position: absolute;
-  top: 320px;
-  left: 300px;
+.slogan__subtitle {
+  position: relative;
   letter-spacing: 2px;
   font-size: 42px;
   color: #FFFFFF;
   font-weight: 300;
   text-shadow: 0 0 2px black;
+  margin-left: 100px;
 }
 
-.header__gallery {
+.slogan__subtitle::before {
+  position: absolute;
+  content: '&';
+  top: -130%;
+  left: -15%;
+  font-size: 110px;
+  color: #BBEDFF;
+  font-weight: bold;
+  text-shadow: none;
+}
+
+.gallery {
+  width: 100%;
+  height: 100%;
+  flex-grow: 1;
   display: flex;
   justify-content: flex-end;
-  position: relative;
-  top: 500px;
+  align-items: center;
 }
-
-.header__gallery-item {
+.gallery__item {
   position: relative;
   height: 241px;
 }
 
-.header__gallery-item:last-child {
+.gallery__item:last-child {
   background: #F4F4F4;
 }
 
-.header__gallery-text {
+.gallery__text {
   position: absolute;
   bottom: 0;
   width: 322px;
   height: 66px;
-  background: rgba(137, 202, 81, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
   color: #FFFFFF;
   font-size: 14px;
   font-weight: 700;
-}
-
-.fa-heart-o {
-  padding-right: 10px;
-  font-size: 30px;
-}
-
-.fa-heart-o {
-  color: #ADFF63;
-}
-
-.yellow {
-  color: #CC9800;
-}
-
-.yellow-bg {
   background: rgba(254, 236, 117, 0.5);
 }
 
-.fa-chevron-right {
+.gallery__item:first-child .gallery__text {
+  background: rgba(137, 202, 81, 0.5);
+}
+
+.gallery__icon {
+  padding-right: 10px;
+  font-size: 30px;
+  color: #CC9800;
+}
+
+.gallery__icon:last-child {
   font-size: 50px;
   color: #D4D4D4;
   padding: 95px 35px;
+}
+
+.gallery__item:first-child .gallery__icon {
+  color: #ADFF63;
 }
 
 .about {
@@ -280,22 +287,22 @@ body {
   text-align: justify;
 }
 
-.about__item-text {
+.about__content {
   font-size: 16px;
   color: #6D6E71;
   padding: 10px;
   margin-left: 110px;
 }
 
-.about__item-text h3 {
+.about__title {
   margin-top: 0;
 }
 
-.about__item-img {
+.about__img {
   position: absolute;
 }
 
-footer {
+.footer {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -319,12 +326,16 @@ footer {
     height: 50px;
   }
 
-  .header__logo {
+  .logo {
     width: auto;
     height: auto;
   }
 
-  .header__contacts {
+  .logo__link {
+    top: 0;
+  }
+
+  .popup {
     display: none;
   }
 
@@ -332,7 +343,7 @@ footer {
     border-top: none;
   }
 
-  .fa-bars {
+  .menu-mobile {
     display: block;
     width: 220px;
   }
@@ -341,11 +352,15 @@ footer {
     height: 685px;
   }
 
-  .menu__nav {
+  .menu__list {
     display: none;
   }
 
-  .header__gallery {
+  .slogan {
+    justify-content: center;
+  }
+
+  .gallery {
     display: none;
   }
   
