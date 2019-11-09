@@ -10,16 +10,16 @@
 <body>
   <div class="wrapper">
     <form action="" class="form" novalidate>
-      <ul class="form__items">
-        <li class="form__item">
-          <h2 class="header">Form Here</h2>
-          <h5 class="notice">* required fields</h5>
-        </li>
+      <div class="form__list">
+        <div class="form__item">
+          <h2 class="form__header">Form Here</h2>
+          <h5 class="form__notice">* required fields</h5>
+        </div>
 
-        <li class="form__item">
+        <div class="form__item">
           <label
             for="name"
-            class="form__item-label"
+            class="form__label"
           >
             Name:
           </label>
@@ -28,14 +28,14 @@
             placeholder="placeholder text"
             name="name"
             id="name"
-            class="form__item-field"
+            class="form__input"
           >
-        </li>
+        </div>
 
-        <li class="form__item">
+        <div class="form__item">
           <label
             for="email"
-            class="form__item-label"
+            class="form__label"
           >
             Email:
           </label>
@@ -44,16 +44,16 @@
             placeholder="placeholder text"
             name="email"
             id="email"
-            class="form__item-field"
+            class="form__input"
             required
           >
-          <span class="form__warning">Form field hint</span>
-        </li>
+          <span class="form--warning">Form field hint</span>
+        </div>
 
-        <li class="form__item">
+        <div class="form__item">
           <label
             for="website"
-            class="form__item-label"
+            class="form__label"
           >
             Website:
           </label>
@@ -62,16 +62,16 @@
             placeholder="placeholder text"
             name="website"
             id="website"
-            class="form__item-field"
+            class="form__input"
             required
           >
-          <span class="form__warning">Form field hint</span>
-        </li>
+          <span class="form--warning">Form field hint</span>
+        </div>
 
-        <li class="form__item">
+        <div class="form__item">
           <label
             for="message"
-            class="form__item-label"
+            class="form__label"
           >
             Message:
           </label>
@@ -79,15 +79,20 @@
             name="message"
             id="message"
             rows="4"
-            class="form__item-area"
+            class="form__textarea"
           >
           </textarea>      
-        </li>
+        </div>
 
-        <li class="form__item">
-          <button type="submit" class="form__item-button">Submit</button>
-        </li>
-      </ul>
+        <div class="form__item">
+          <button
+            type="submit"
+            class="form__button"
+          >
+            Submit
+          </button>
+        </div>
+      </div>
     </form>
   </div>
 </body>
