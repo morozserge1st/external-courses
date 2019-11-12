@@ -141,24 +141,12 @@ function removeInput() {
 
 function addIssue(text) {
   if (text.trim()) {
-    const newIssue = {
+    const issue = {
       id: Math.random(),
       name: text
     };
 
-    dataMock = dataMock.map((card, index) => {
-      if (index === 0) {
-        return {
-          id: card.id,
-          title: card.title,
-          issues: [
-            ...card.issues, 
-            newIssue
-          ]
-        }
-      }
-      return card;
-    });
+    dataMock[0].issues = [...dataMock[0].issues, issue];
 
     localStorage.setItem('data', JSON.stringify(dataMock));
 
@@ -178,11 +166,10 @@ function makeSelect(index) {
   /* Remove select */
 
   function removeSelect() {
-    this.removeEventListener('change', removeSelect);
     this.removeEventListener('blur', removeSelect);
 
     if (this.selectedIndex) {
-      moveIssue(this[this.selectedIndex].id)
+      moveIssue(+this[this.selectedIndex].id)
     }
     this.parentNode.remove();
   }
@@ -190,27 +177,10 @@ function makeSelect(index) {
   /* Move select */
 
   function moveIssue(id) {
-    const issue = dataMock[index - 1].issues.find(x => x.id == id);
+    const issue = dataMock[index - 1].issues.find(x => x.id === id);
 
-    dataMock = dataMock.map((card, i) => {
-      if (i === index - 1) {
-        return {
-          id: card.id,
-          title: card.title,
-          issues: card.issues.filter(x => x.id != id)
-        }
-      } else if (i === index) {
-        return {
-          id: card.id,
-          title: card.title,
-          issues: [
-            ...card.issues, 
-            issue
-          ]
-        }
-      } 
-      return card;
-    });
+    dataMock[index - 1].issues = dataMock[index - 1].issues.filter(x => x.id !== id);
+    dataMock[index].issues = [...dataMock[index].issues, issue];
 
     localStorage.setItem('data', JSON.stringify(dataMock));
 
@@ -246,7 +216,6 @@ function makeSelect(index) {
       select.append(option)
     });
 
-    select.addEventListener('change', removeSelect);
     select.addEventListener('blur', removeSelect);
     select.focus();
     checkCardParams();
@@ -273,4 +242,4 @@ function makeSelect(index) {
 
     checkCardParams();
   }
-})(dataMock);
+}(dataMock));

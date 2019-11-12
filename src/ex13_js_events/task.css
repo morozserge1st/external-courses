@@ -222,6 +222,7 @@ ul {
   width: 100%;
   padding: 10px;
   border-radius: 5px;
+  height: 41px;
   border: none;
   font-size: 18px;
   box-sizing: border-box;
@@ -234,7 +235,7 @@ ul {
   border: none;
   cursor: pointer;
   font-family: 'Roboto', sans-serif;
-  padding: 5px;
+  padding: 10px 5px;
   font-size: 18px;
   line-height: 21px;
   color: #5E6C84;
