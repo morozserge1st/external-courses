@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Form</title>
+  <link rel="stylesheet" href="task.css">
+</head>
+<body>
+  <div class="wrapper">
+    <form action="#" class="form" novalidate>
+      <div class="form__list">
+        <div class="form__item">
+          <h2 class="form__header">Form Here</h2>
+          <h5 class="form__notice">* required fields</h5>
+        </div>
+
+        <div class="form__item">
+          <label
+            for="name"
+            class="form__label"
+          >
+            Name:
+          </label>
+          <input
+            type="text"
+            placeholder="placeholder text"
+            name="name"
+            id="name"
+            class="form__input"
+          >
+        </div>
+
+        <div class="form__item">
+          <label
+            for="email"
+            class="form__label"
+          >
+            Email:
+          </label>
+          <input
+            type="email"
+            placeholder="placeholder text"
+            name="email"
+            id="email"
+            class="form__input"
+            required
+          >
+          <span class="form--warning">Form field hint</span>
+        </div>
+
+        <div class="form__item">
+          <label
+            for="website"
+            class="form__label"
+          >
+            Website:
+          </label>
+          <input
+            type="url"
+            placeholder="placeholder text"
+            name="website"
+            id="website"
+            class="form__input"
+            required
+          >
+          <span class="form--warning">Form field hint</span>
+        </div>
+
+        <div class="form__item">
+          <label
+            for="message"
+            class="form__label"
+          >
+            Message:
+          </label>
+          <textarea
+            name="message"
+            id="message"
+            rows="4"
+            class="form__textarea"
+          >
+          </textarea>      
+        </div>
+
+        <div class="form__item">
+          <button
+            type="submit"
+            class="form__button"
+          >
+            Submit
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

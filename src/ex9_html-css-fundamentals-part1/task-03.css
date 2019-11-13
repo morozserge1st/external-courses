@@ -1,0 +1,31 @@
+.button-wrap {
+  width: 250px;
+  position: relative;
+  padding: 7px;
+  background-color: #cccccc;
+  border-radius: 15px;
+  border: 1px solid white;
+  box-shadow: 0 0 0 2px #545454, 0 2px 5px 2px #868686;
+}
+
+.button {
+  width: 100%;
+  position: relative;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: Arial;
+  text-shadow: 0 0 2px white;
+  color: #545454;
+  font-weight: 900;
+  font-size: 24px;
+  padding: 12px 18px;
+  border-radius: 10px;
+  background: linear-gradient(#dedede 35%,#b4b4b5 60%);
+  box-shadow: 0 1px 3px 1px #545454;
+}
+
+.button::after,
+.button::before {
+  color: gray;
+  content: "★";
+}
