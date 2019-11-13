@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Task-02</title>
+</head>
+<body>
+  <form action="http://httpbin.org/get" method="get">
+    <fieldset>
+      <legend>Personal data</legend>
+      <label>Surname <input type="text"></label>
+      <br>
+      <label>First name <input type="text"></label>
+      <br>
+      <label>Middle name <input type="text"></label>
+      <br>
+      <span>You are</span>
+      <input type="radio" name="sex" id="male">
+      <label for="male">male</label>
+      <input type="radio" name="sex" id="female">
+      <label for="female">female</label>
+      <br>
+      <label>Age
+        <input type="number" min="18" max="101">
+      </label>
+      <br>
+      <label>Country of Residence
+        <select>
+          <option value="empty" disabled selected>Select Country</option>
+          <option value="russia">Russia</option>
+          <option value="usa">USA</option>
+        </select>
+      </label>
+      <br>
+      <span>City</span>
+      <input type="checkbox" name="city" id="ryazan">
+      <label for="ryazan">Ryazan</label>
+      <input type="checkbox" name="city" id="moscow">
+      <label for="moscow">Moscow</label>
+      <br>
+      <label for="photo">Photography</label>
+      <input type="file" name="photo" id="photo">
+      <hr>
+      <label>Title
+        <select multiple>
+          <optgroup label="Technologies">
+            <option>Web Master</option>
+            <option>Database Administrator</option>
+            <option>Computer-Aided design</option>
+          </optgroup>
+          <optgroup label="Finance">
+            <option>Economic Planning</option>
+            <option>Management accounting</option>
+            <option>Budgeting and planning</option>
+          </optgroup>
+        </select>
+      </label>
+      <br>
+      <label>Salary <input type="range"></label>
+      <br>
+      <textarea placeholder="Tell us about yourself..." cols="30" rows="10"></textarea>
+    </fieldset>
+    <fieldset>
+      <legend>Contact Information</legend>
+      <label>Site <input type="url"></label>
+      <br>
+      <label>Email <input type="email"></label>
+      <br>
+      <label>Phone <input type="tel"></label>
+    </fieldset>
+    <label>Password <input type="password"></label>
+    <br>
+    <input type="submit">
+    <input type="reset">
+  </form>
+</body>
+</html>
