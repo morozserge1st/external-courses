@@ -98,13 +98,13 @@ input.oninput = debounce(function() {
 
 function debounce(func, wait) {
   let timeout;
-  
-	return function() {
+
+  return function() {
     clearTimeout(timeout);
-    
-		timeout = setTimeout(function() {
-			timeout = null;
-			func.apply(this, arguments);
-		}, wait);
-	};
+
+    timeout = setTimeout(function() {
+      timeout = null;
+      func.apply(this, arguments);
+    }, wait);
+  };
 }
