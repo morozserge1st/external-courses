@@ -1,4 +1,4 @@
-let articles = [
+const articles = [
   {
     id: 1,
     name: 'Палитра цветов для LUA'
@@ -92,21 +92,19 @@ function createTable(data) {
 
 createTable(articles);
 
-input.oninput = function() {
-  articles = articles.filter(x => x.name.includes(input.value));
-  console.log(articles)
-  debounce(createTable, 1000);
-};
+input.oninput = debounce(function() {
+  createTable(articles.filter(x => x.name.toLowerCase().includes(input.value)));
+}, 1000);
 
-function debounce(func, timer) {
-  let isWaiting = false;
-
-  return function() {
-    if (isWaiting) return;
-
-    func.apply(this, arguments);
-    isWaiting = true;
-
-    setTimeout(() => isWaiting = false, timer);
-  };
+function debounce(func, wait) {
+  let timeout;
+  
+	return function() {
+    clearTimeout(timeout);
+    
+		timeout = setTimeout(function() {
+			timeout = null;
+			func.apply(this, arguments);
+		}, wait);
+	};
 }
