@@ -6,35 +6,35 @@ class Sweet {
 }
 
 class Gift {
-  constructor(sweets) {
-    this.sweets = sweets;
+  constructor() {
+    this.sweets = Array.from(arguments);
   }
 
   getWeight() {
     let result = 0;
-    this.sweets.forEach((sweet) => {
+    this.sweets.forEach(sweet => {
       result += sweet.weight;
     });
     return result;
   };
 
-  sort(par) {
-    return this.sweets.sort(par);
+  sortSweet(callback) {
+    return this.sweets.sort(callback);
   };
 
   findSweet(name) {
-    return this.sweets.filter((sweet) => sweet.name.includes(name));
+    return this.sweets.filter(sweet => sweet.name.toLowerCase().includes(name.toLowerCase()));
   };
 }
 
-let sweet1 = new Sweet('Lion', 0.15);
-let sweet2 = new Sweet('Haribo', 0.1);
-let sweet3 = new Sweet('M&ms', 1);
-let sweet4 = new Sweet('Mars', 3);
+const raffaello = new Sweet('Raffaello', 7);
+const lion = new Sweet('Lion', 3);
+const haribo = new Sweet('Haribo', 3);
+const twix = new Sweet('Twix', 2);
 
-let gift = new Gift([sweet1, sweet2, sweet3, sweet4]);
+const gift = new Gift(raffaello, lion, haribo, twix);
 
-console.log(gift.sort((a, b) => a.weight - b.weight));
 console.log(gift.findSweet('r'));
 console.log(gift.findSweet('Lion'));
 console.log(gift.getWeight());
+console.log(gift.sortSweet((a, b) => a.weight - b.weight));

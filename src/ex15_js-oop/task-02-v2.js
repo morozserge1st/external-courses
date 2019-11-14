@@ -1,5 +1,5 @@
 class Device {
-  constructor (name, power, isWork) {
+  constructor(name, power, isWork) {
     this.name = name;
     this.power = power;
     this.isWork = isWork;
@@ -7,44 +7,42 @@ class Device {
 }
 
 class Room {
-  constructor(name, devices) {
+  constructor(name) {
     this.name = name;
-    this.devices = devices;
+    this.devices = Array.from(arguments).slice(1);
   }
 
   getPower() {
     let result = 0;
-    this.devices.forEach((device) => {
-      if(device.isWork) {
+    this.devices.forEach(device => {
+      if (device.isWork) {
         result += device.power;
       }
     });
     return result;
   }
-  
+
   handleWork(name) {
-    this.devices.forEach((device) => {
+    this.devices.forEach(device => {
       if(device.name === name) {
         device.isWork = !device.isWork;
       }
     });
-    return this.devices;
   }
-  
+
   findDevice(name) {
-    return this.devices.filter((device) => device.name.includes(name));
+    return this.devices.filter(device => device.name.toLowerCase().includes(name.toLowerCase()));
   };
- 
 }
 
-let device1 = new Device('Blender', 0.7, false);
-let device2 = new Device('Stove', 1.3, true);
-let device3 = new Device('Oven', 2.2, true);
-let device4 = new Device('Dishwasher', 1.8, false);
+const blender = new Device('Blender', 0.7, false);
+const stove = new Device('Stove', 1.3, true);
+const oven = new Device('Oven', 2.2, true);
+const dishwasher = new Device('Dishwasher', 1.8, false);
 
-let kitchen = new Room('kitchen', [device1, device2, device3, device4]);
+const kitchen = new Room('kitchen', blender, stove, oven, dishwasher);
 
 console.log(kitchen.getPower());
-console.log(kitchen.findDevice('Oven'));
+console.log(kitchen.findDevice('oven'));
 console.log(kitchen.handleWork('Oven'));
 console.log(kitchen.getPower());
