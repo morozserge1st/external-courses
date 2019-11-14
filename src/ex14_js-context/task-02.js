@@ -1,5 +1,5 @@
 function Hangman(word) {
-  this.word = word;
+  this.word = word.toLowerCase();
   this.errors = 6;
   this.wrongSymbols = [];
   this.result = [];
@@ -8,7 +8,9 @@ function Hangman(word) {
     this.result.push('_');
   }
 
-  this.guess = function (symbol) {
+  this.guess = function (letter) {
+    const symbol = letter.toLowerCase();
+
     if (this.word.includes(symbol)) {
       for (let i = 0; i < this.word.length; i++) {
         if (this.word[i] === symbol) {
@@ -25,23 +27,21 @@ function Hangman(word) {
       this.wrongSymbols.push(symbol);
       this.message = `wrong letter, errors left ${this.errors} | ${this.wrongSymbols.join(',')}`;
     }
+
     console.log(this.message);
     return this;
   };
 
   this.getGuessedString = function () {
-    console.log(this.result.join(''));
-    return this;
+    return this.result.join('');
   };
 
   this.getErrorsLeft = function () {
-    console.log(this.errors);
-    return this;
+    return this.errors;
   };
 
   this.getWrongSymbols = function () {
-    console.log(this.wrongSymbols);
-    return this;
+    return this.wrongSymbols;
   };
 
   this.getStatus = function () {
@@ -49,8 +49,8 @@ function Hangman(word) {
     return this;
   };
 
-  this.startAgain = function (newWord) {
-    this.word = newWord;
+  this.startAgain = function (word) {
+    this.word = word.toLowerCase();
     this.errors = 6;
     this.wrongSymbols = [];
     this.result = [];
@@ -61,7 +61,10 @@ function Hangman(word) {
     }
     return this;
   };
+
   return this;
 }
 
-module.exports = Hangman();
+const hangman = new Hangman('webpurple');
+
+module.exports = hangman;

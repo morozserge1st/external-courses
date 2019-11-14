@@ -46,11 +46,16 @@ function Calculator() {
   };
 
   this.fetchData = function (callback) {
-    setTimeout(callback, 1000, 500);
-    return this;
+    const cb = callback.bind(this);
+
+    setTimeout(function(){
+      cb(500)
+    }, 1000);
   };
 
   return this;
 }
 
-module.exports = Calculator();
+const calculator = new Calculator();
+
+module.exports = calculator;
