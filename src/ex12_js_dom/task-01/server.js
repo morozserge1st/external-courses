@@ -8,24 +8,13 @@ app.listen(port, () => {
 });
 
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/task-01.html');
+  res.sendFile(__dirname + '/asset/task-01.html');
 });
 
-app.get('/task-01.css', (req, res) => {
-  res.sendFile(__dirname + '/task-01.css');
-});
-
-app.get('/task-01.js', (req, res) => {
-  res.sendFile(__dirname + '/task-01.js');
-});
-
-app.get('/asset/:file', (req, res) => {
-  const file = req.params.file
-  res.sendFile(__dirname + '/asset/' + file)
-})
+app.use(express.static('asset'));
 
 app.get('/api/v1/images', (req, res) => {
-  fs.readdir('./asset', (err,items) => {
+  fs.readdir('./asset/img', (err,items) => {
     if(items[0] == '.DS_Store') {
       items.splice(0,1);
     }
