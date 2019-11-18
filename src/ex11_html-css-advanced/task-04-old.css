@@ -1,0 +1,147 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+main {
+  height: 100%;
+  display: grid;
+  grid-template: 50px 1fr 50px / 200px 1fr;
+}
+header {
+  background: #2F364A;
+  grid-area: 1 / 1 / 3 / 3;
+}
+section {
+  background: #EEF1F7;
+  grid-area: 2 / 2 / 2 / 2;
+}
+.sidebar {
+  background: #1F2637;
+  grid-area: 2 / 1 / 2 / 2;
+}
+footer {
+  background: #181E2C;
+  grid-area: 3 / 1 / 3 / 3;
+}
+
+.sidebar__logout-panel {
+  background: inherit;
+  padding: 37px 20px;
+  border-bottom: 5px solid #181E2C;
+}
+
+.button {
+  position: relative;
+  text-align: right;
+  text-transform: uppercase;
+  font-family: ProximaNova-Bold, AdobeInvisFont, MyriadPro-Regular;
+  font-size: 14px;
+  color: #FFFFFF;
+  background: #F2795A;
+  padding: 14px 20px;
+  border-radius: 5px;
+}
+
+.button::before {
+  position: absolute;
+  content: '+';
+  left: 20px;
+  top: 8px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.sidebar__section {
+  font-family: ProximaNova-Regular, AdobeInvisFont, MyriadPro-Regular;
+  font-size: 13px;
+  padding-left: 0;
+  border-bottom: 5px solid #181E2C;
+  margin: 0;
+  padding: 20px 0;
+}
+
+.sidebar__section:last-child {
+  border-bottom: none;
+}
+
+.sidebar__nav {
+  list-style-type: none;
+}
+
+.sidebar__nav-item,
+.sidebar__categories-item,
+.sidebar__history-list-item {
+  padding: 10px;
+  padding-left: 20px;
+}
+.sidebar__nav-item:hover,
+.sidebar__categories-item:hover {
+  background: #15A4FA;
+}
+.sidebar__nav-item:hover a,
+.sidebar__categories-item:hover a {
+  color: #FFFFFF;
+}
+
+.sidebar__nav-item a,
+.sidebar__categories-item a {
+  text-decoration: none;
+  color: #78829D;
+}
+
+.sidebar__nav-item a span {
+  padding-left: 10px;
+}
+
+.sidebar__categories-item {
+  padding-left: 23px;
+}
+
+.sidebar__categories-item a span {
+  padding-left: 13px;
+}
+
+.sidebar__categories-item a i {
+  font-size: 7px;
+}
+
+.sidebar__history-list-item i {
+  padding-top: 2px;
+  font-size: 15px;
+}
+
+.sidebar__history-list-item {
+  color: #6F7D95;
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.sidebar__history-list-item div {
+  padding-left: 5px;
+}
+
+.sidebar__history-list-item div span {
+  font-weight: bold;
+}
+
+.sidebar__history-time {
+  padding-top: 10px;
+  font-size: 12px;
+  font-family: ProximaNova-Light,AdobeInvisFont,MyriadPro-Regular;
+}
+
+.circle-1 {
+  color: #E64C66;
+}
+
+.circle-2 {
+  color: #FFAB00;
+}
+
+.circle-3 {
+  color: #00BFDD;
+}
+
+.circle-4 {
+  color: #7874CF;
+}
