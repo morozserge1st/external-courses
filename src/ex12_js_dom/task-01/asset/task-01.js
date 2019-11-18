@@ -58,4 +58,4 @@ function putImg() {
   slides[0].style.backgroundImage = `url(./img/${images[currentImg]})`;
   slides[1].style.backgroundImage = `url(./img/${images[nextImg]})`;
   slides[2].style.backgroundImage = `url(./img/${images[lastImg]})`;
-};
+}
