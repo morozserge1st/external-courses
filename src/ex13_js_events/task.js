@@ -29,8 +29,6 @@ let dataMock = localStorageData ? localStorageData : [
 
 let isOpen = false;
 
-/* User menu */
-
 profile.addEventListener('click', showUserMenu);
 
 function showUserMenu(e) {
@@ -50,8 +48,6 @@ function showUserMenu(e) {
   arrow.style.transform = transform;
   menu.style.visibility = visibility;
 }
-
-/* Create card */
 
 function createCard(id, title) {
   const card = document.createElement('section');
@@ -81,8 +77,6 @@ function createCard(id, title) {
   container.append(button);
 }
 
-/* Create card item */
-
 function createCardItem(list, data) {
   for (let i = 0; i < data.length; i++) {
     const item = document.createElement('div');
@@ -92,8 +86,6 @@ function createCardItem(list, data) {
     list.append(item);
   }
 }
-
-/* Elements height & disabled buttons */
 
 function checkCardParams() {
   const cards = document.querySelectorAll('.card');
@@ -112,8 +104,6 @@ function checkCardParams() {
   }
 }
 
-/* Add input */
-
 function addInput() {
   const wrap = document.createElement('div');
   wrap.className = 'wrap';
@@ -128,16 +118,12 @@ function addInput() {
   checkCardParams();
 }
 
-/* Remove input */
-
 function removeInput() {
   this.removeEventListener('blur', removeInput);
   addIssue(this.value);
 
   this.parentNode.remove();
 }
-
-/* Add issue */
 
 function addIssue(text) {
   if (text.trim()) {
@@ -158,12 +144,8 @@ function addIssue(text) {
   }
 }
 
-/* Make select */
-
 function makeSelect(index) {
   /* The following functions are made inside for index closure. */
-
-  /* Remove select */
 
   function removeSelect() {
     this.removeEventListener('blur', removeSelect);
@@ -173,8 +155,6 @@ function makeSelect(index) {
     }
     this.parentNode.remove();
   }
-
-  /* Move select */
 
   function moveIssue(id) {
     const issue = dataMock[index - 1].issues.find(x => x.id === id);
@@ -193,8 +173,6 @@ function makeSelect(index) {
     }
     checkCardParams();
   }
-
-  /* Add select */
 
   return function addSelect() {
     const wrap = document.createElement('div');
@@ -221,8 +199,6 @@ function makeSelect(index) {
     checkCardParams();
   }
 }
-
-/* Initialize data */
 
 (function onLoad(data) {
   for (let i = 0; i < data.length; i++) {
