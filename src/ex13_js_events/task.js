@@ -29,8 +29,6 @@ let dataMock = localStorageData ? localStorageData : [
 
 let isOpen = false;
 
-profile.addEventListener('click', showUserMenu);
-
 function showUserMenu(e) {
   let visibility = 'hidden';
   let transform = 'rotateZ(0deg)';
@@ -78,29 +76,24 @@ function createCard(id, title) {
 }
 
 function createCardItem(list, data) {
-  for (let i = 0; i < data.length; i++) {
+  data.map(card => {
     const item = document.createElement('div');
     item.className = 'card__item';
-    item.id = data[i].id;
-    item.innerText = data[i].name;
+    item.id = card.id;
+    item.innerText = card.name;
     list.append(item);
-  }
+  })
 }
 
-function checkCardParams() {
-  const cards = document.querySelectorAll('.card');
-  const button = document.querySelectorAll('.card__button');
+function disableButton() {
+  const buttons = document.querySelectorAll('.card__button');
 
-  for (let i = 0; i < cards.length; i++) {
-    if (cards[i].clientHeight > main.clientHeight - 50) {
-      cards[i].querySelector('.container').style.overflowY = 'auto';
-    } else {
-      cards[i].querySelector('.container').style.removeProperty('overflow-y');
+  for (let i = 1; i < buttons.length; i++) {
+    buttons[i].removeAttribute('disabled');
+
+    if (!dataMock[i - 1].issues.length) {
+      buttons[i].setAttribute('disabled', 'true');
     }
-  }
-
-  for (let i = 1; i < button.length; i++) {
-    dataMock[i - 1].issues.length ? button[i].disabled = false : button[i].disabled = true;
   }
 }
 
@@ -115,7 +108,6 @@ function addInput() {
 
   input.focus();
   input.addEventListener('blur', removeInput);
-  checkCardParams();
 }
 
 function removeInput() {
@@ -140,7 +132,7 @@ function addIssue(text) {
     list.innerHTML = '';
     createCardItem(list, dataMock[0].issues);
 
-    checkCardParams();
+    disableButton();
   }
 }
 
@@ -171,7 +163,7 @@ function makeSelect(index) {
         createCardItem(list[i], dataMock[i].issues);
       }
     }
-    checkCardParams();
+    disableButton();
   }
 
   return function addSelect() {
@@ -196,26 +188,32 @@ function makeSelect(index) {
 
     select.addEventListener('blur', removeSelect);
     select.focus();
-    checkCardParams();
   }
 }
 
+profile.addEventListener('click', showUserMenu);
+
 (function onLoad(data) {
-  for (let i = 0; i < data.length; i++) {
+  data.map(card => {
     const {
       id,
       title,
       issues
-    } = data[i];
+    } = card;
     createCard(id, title);
 
-    const card = document.getElementById(id);
-    const list = card.querySelector('.card__list');
+    const item = document.getElementById(id);
+    const list = item.querySelector('.card__list');
     createCardItem(list, issues);
 
-    const button = card.querySelector('.card__button');
-    i === 0 ? button.addEventListener('click', addInput) : button.addEventListener('click', makeSelect(i));
+  });
+  
+  const buttons = document.querySelectorAll('.card__button');
 
-    checkCardParams();
+  buttons[0].addEventListener('click', addInput);
+  for (let i = 1; i < buttons.length; i++) {
+    buttons[i].addEventListener('click', makeSelect(i));    
   }
+
+  disableButton();
 }(dataMock));
