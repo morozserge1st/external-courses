@@ -52,8 +52,6 @@ function Calculator() {
       cb(500)
     }, 1000);
   };
-
-  return this;
 }
 
 const calculator = new Calculator();
