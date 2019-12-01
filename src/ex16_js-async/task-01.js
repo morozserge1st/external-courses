@@ -1,16 +1,12 @@
 function analogFetch(url, init) {
   const xhr = new XMLHttpRequest();
-  const promise = new Promise((res, rej) => {
-    init ? makeRequestWistInit() : makeRequest();
-    xhr.status != 200 ? rej(xhr.status + ': ' + xhr.statusText) : res(xhr.responseText);
-  });
 
-  function makeRequest() {
+  function makeDefaultRequest() {
     xhr.open('GET', url, false);
     xhr.send();
   }
 
-  function makeRequestWistInit() {
+  function makeRequestWithParams() {
     xhr.open(init.method, url, false);
     if (Object.keys(init.headers).length !== 0) {
       for (const key in init.headers) {
@@ -23,10 +19,13 @@ function analogFetch(url, init) {
   }
 
   String.prototype.json = function () {
-    return JSON.parse(this)
+    return JSON.parse(this);
   }
 
-  return promise;
+  return new Promise((resolve, reject) => {
+    init ? makeRequestWithParams() : makeDefaultRequest();
+    xhr.status != 200 ? reject(xhr.status + ': ' + xhr.statusText) : resolve(xhr.responseText);
+  });;
 }
 
 // GET

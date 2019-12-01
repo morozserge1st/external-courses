@@ -47,64 +47,64 @@ const articles = [
     id: 12,
     name: 'Block .. EndBlock'
   }
-]
+];
 
 const table = document.querySelector('.table');
 const input = document.querySelector('.input');
 
-const header = [
+const headers = [
   'Id',
   'Название'
 ];
 
-function createHead(){
+const createHead = () => {
   const row = document.createElement('tr');
   row.className = 'table__row';
   table.append(row);
 
-  for (let i = 0; i < header.length; i++) {
+  headers.map(header => {
     const head = document.createElement('th');
     head.className = 'table__head';
-    head.innerText = header[i];
+    head.innerText = header;
     row.append(head);
-  }
+  });
 };
 
-function createTable(data) {
+const createTable = (arr) => {
   table.innerHTML = '';
   createHead();
   
-  for (let i = 0; i < data.length; i++) {
+  arr.map(elem => {
     const row = document.createElement('tr');
     row.className = 'table__row';
     table.append(row);
 
-    for (const key in data[i]) {
-      if (data[i].hasOwnProperty(key)) {
+    for (const key in elem) {
+      if (Object.keys(elem).length) {
         const cell = document.createElement('td');
         cell.className = 'table__cell';
-        cell.innerText = data[i][key];
+        cell.innerText = elem[key];
         row.append(cell);
       }
     }
-  }
-}
+  });
+};
 
 createTable(articles);
 
-input.oninput = debounce(function() {
-  createTable(articles.filter(x => x.name.toLowerCase().includes(input.value)));
-}, 1000);
-
-function debounce(func, wait) {
+const debounce = (func, delay) => {
   let timeout;
 
-  return function() {
+  return () => {
     clearTimeout(timeout);
 
-    timeout = setTimeout(function() {
+    timeout = setTimeout(() => {
       timeout = null;
-      func.apply(this, arguments);
-    }, wait);
+      func();
+    }, delay);
   };
-}
+};
+
+input.addEventListener('input', debounce(() => (
+  createTable(articles.filter(x => x.name.toLowerCase().includes(input.value)))
+), 1000));
