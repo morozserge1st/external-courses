@@ -1,48 +1,63 @@
 class Device {
-  constructor(name, power, isWork) {
+  constructor(name, power, isActive) {
     this.name = name;
     this.power = power;
-    this.isWork = isWork;
+    this.isActive = isActive;
+  }
+}
+
+class LightingDevice extends Device {
+  constructor(name, power, isActive, lumens) {
+    super(name, power, isActive);
+    this.lumens = lumens;
+  }
+}
+
+class CleaningDevice extends Device {
+  constructor(name, power, isActive, noise) {
+    super(name, power, isActive);
+    this.noise = noise;
   }
 }
 
 class Room {
-  constructor(name) {
+  constructor(name, devices) {
     this.name = name;
-    this.devices = Array.from(arguments).slice(1);
+    this.devices = devices;
   }
 
   getPower() {
     let result = 0;
     this.devices.forEach(device => {
-      if (device.isWork) {
+      if (device.isActive) {
         result += device.power;
       }
     });
     return result;
   }
 
-  handleWork(name) {
+  toggleEnabled(name) {
     this.devices.forEach(device => {
       if(device.name === name) {
-        device.isWork = !device.isWork;
+        device.isActive = !device.isActive;
       }
     });
   }
 
   findDevice(name) {
-    return this.devices.filter(device => device.name.toLowerCase().includes(name.toLowerCase()));
+    return this.devices.filter(device => (device.name.toLowerCase() === name.toLowerCase()));
   };
 }
 
 const blender = new Device('Blender', 0.7, false);
-const stove = new Device('Stove', 1.3, true);
-const oven = new Device('Oven', 2.2, true);
-const dishwasher = new Device('Dishwasher', 1.8, false);
+const spotlights = new LightingDevice('Spotlights', 0.3, true, 600);
+const pendant = new LightingDevice('Pendant', 0.5, true, 700);
+const steamCleaner = new CleaningDevice('Steam Cleaner', 1, false, 60);
+const vacuumCleaner = new CleaningDevice('Vacuum Cleaner', 1.8, true, 75);
 
-const kitchen = new Room('kitchen', blender, stove, oven, dishwasher);
+const kitchen = new Room('kitchen', [blender, spotlights, pendant, steamCleaner, vacuumCleaner]);
 
 console.log(kitchen.getPower());
-console.log(kitchen.findDevice('oven'));
-console.log(kitchen.handleWork('Oven'));
+console.log(kitchen.findDevice('spotlights'));
+console.log(kitchen.toggleEnabled('Vacuum Cleaner'));
 console.log(kitchen.getPower());
