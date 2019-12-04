@@ -1,0 +1,7 @@
+.main {
+  height: 100%;
+  overflow: auto;
+  padding: 20px;
+  display: flex;
+  align-items: flex-start;
+}

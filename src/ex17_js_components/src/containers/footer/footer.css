@@ -1,0 +1,18 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  color: #FFFFFF;
+  background: #0067A3;
+}
+
+.state {
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.state__item,
+.about {
+  margin: 0;
+  padding: 17px 35px;
+}

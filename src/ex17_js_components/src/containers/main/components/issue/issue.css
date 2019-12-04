@@ -1,0 +1,8 @@
+.card__item {
+  word-break: break-word;
+  background: #FFFFFF;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 15px;
+  margin-right: 12px;
+}

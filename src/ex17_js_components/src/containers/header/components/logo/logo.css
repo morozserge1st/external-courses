@@ -1,0 +1,17 @@
+.logo {
+  font-size: 28px;
+  padding: 5px 15px;
+  display: flex;
+  align-items: center;
+}
+
+.logo__link {
+  margin-left: 10px;
+  color: #FFFFFF;
+  position: relative;
+  top: 5px;
+}
+
+.logo__link:visited {
+  color: #FFFFFF;
+}
