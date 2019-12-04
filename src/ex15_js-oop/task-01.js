@@ -3,16 +3,12 @@ function Sweet(name, weight) {
   this.weight = weight;
 }
 
-function Gift() {
-  this.sweets = Array.from(arguments);
+function Gift(sweets) {
+  this.sweets = sweets;
 }
 
 Gift.prototype.getWeight = function () {
-  let result = 0;
-  this.sweets.forEach(sweet => {
-    result += sweet.weight;
-  });
-  return result;
+  return this.sweets.reduce((result, sweet) => result + sweet.weight,0);
 };
 
 Gift.prototype.sortSweet = function (callback) {
@@ -20,17 +16,17 @@ Gift.prototype.sortSweet = function (callback) {
 };
 
 Gift.prototype.findSweet = function (name) {
-  return this.sweets.filter(sweet => sweet.name.toLowerCase().includes(name.toLowerCase()));
+  return this.sweets.filter(sweet => (sweet.name.toLowerCase() === name.toLowerCase()));
 };
 
 const raffaello = new Sweet('Raffaello', 7);
 const lion = new Sweet('Lion', 3);
-const haribo = new Sweet('Haribo', 3);
-const twix = new Sweet('Twix', 2);
+const haribo = new Sweet('Haribo', 2);
+const twix = new Sweet('Twix', 3);
 
-const gift = new Gift(raffaello, lion, haribo, twix);
+const gift = new Gift([raffaello, lion, haribo, twix]);
 
-console.log(gift.findSweet('r'));
+console.log(gift);
 console.log(gift.findSweet('Lion'));
 console.log(gift.getWeight());
 console.log(gift.sortSweet((a, b) => a.weight - b.weight));
