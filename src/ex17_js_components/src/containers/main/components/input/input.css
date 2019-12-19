@@ -1,0 +1,13 @@
+.wrap {
+  margin-right: 12px;
+  border-radius: 5px;
+  background: #FFFFFF;
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  font-size: 18px;
+  box-sizing: border-box;
+}

@@ -1,0 +1,16 @@
+.wrap {
+  margin-right: 12px;
+  border-radius: 5px;
+  background: #FFFFFF;
+}
+
+.select {
+  background: #FFFFFF;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  height: 41px;
+  border: none;
+  font-size: 18px;
+  box-sizing: border-box;
+}

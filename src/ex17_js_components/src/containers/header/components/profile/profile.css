@@ -1,0 +1,22 @@
+.profile {
+  margin-left: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  background: #FFFFFF;
+  text-align: center;
+  border-radius: 50%;
+}
+
+.avatar img {
+  position: relative;
+  top: 5px;
+}
+
+.arrow {
+  padding: 10px;
+}
